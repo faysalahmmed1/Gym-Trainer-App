@@ -29,8 +29,8 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-                <p>New account <Link className='text-decoration-none ' to={'/register'}>please Register</Link></p>
-                <p>Forget Password<Link className='text-decoration-none ' to={'/register'}>Forget Password</Link></p>
+                <p>New account? <Link className='text-decoration-none ' to={'/register'}>please Register</Link></p>
+                <p>Forget Password <Link className='text-decoration-none ' to={'/register'}>Forget Password</Link></p>
             </Form>
         </div>
 
