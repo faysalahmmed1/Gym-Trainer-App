@@ -2,6 +2,7 @@ import React from 'react';
 import './Register.css'; 
 import { Link } from 'react-router-dom';
 
+
 const Register = () => {
     return (
         <div className='registerForm'>
@@ -12,6 +13,7 @@ const Register = () => {
                 <input type='password' name='password' id='' placeholder='Enter your Password' ></input>
                 <input className='btn btn-primary' type='submit' value='Register'></input>
             </form>
+            <p>Already you have an account? <Link className='text-decoration-none ' to={'/login'}>please Login</Link></p>
         </div>
     );
 };

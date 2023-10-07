@@ -1,0 +1,12 @@
+.faysalImg{
+    height: 400px;
+    width: 300px;
+    border-radius: 200px;
+}
+.aboutMe{
+    border: solid red 5px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: rgb(210, 207, 229);
+}
