@@ -8,6 +8,8 @@ import About from './Pages/About/About';
 import Login from './Pages/Login/Login/Login';
 import Services from './Pages/Services/Services';
 import Service from './Pages/Service/Service';
+import NotFound from './Pages/Shared/NotFound/NotFound';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/trainer' element={<Services></Services>}></Route>
+        <Route path='/blogs'element={<Blogs></Blogs>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
 
       <Footer></Footer>
