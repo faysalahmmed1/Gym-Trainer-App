@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Brad Schoenfeld",
+        "price": "300",
+        "description": "Brad Schoenfeld considered one of greatest trainers of all time is a respected trainer brad schoenfeld considered ",
+        "img": "https://i.ibb.co/j9t0VSy/trainer1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Matt Roberts",
+        "price": "100",
+        "description": "London based trainer Matt trains a roster of celebrity clients, is a published author and has his own brand of fitness",
+        "img": "https://i.ibb.co/NWmCf3S/trainer2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Shaun Stafford",
+        "price": "150",
+        "description": "With a Masters degree in strength and conditioning from Oxford University,  ",
+        "img": "https://i.ibb.co/6RTNL4V/trainer3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Scott Laidler",
+        "price": "180",
+        "description": "Scott is regularly asked to feature as a consultant ",
+        "img": "https://i.ibb.co/GVLTRkx/trainer4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Scott Laidler",
+        "price": "100",
+        "description": "Based in Brisbane, Australia, Recharged ",
+        "img": "https://i.ibb.co/NLJ2XFF/trainer5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Emma Chan ",
+        "price": "300",
+        "description": "Emma Chan is based at Coastal Fitness in Hong Kong. She's a health volleyball. ",
+        "img": "https://i.ibb.co/YWXy10Y/trainer6.jpg"
+    }
+]

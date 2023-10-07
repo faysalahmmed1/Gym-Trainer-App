@@ -1,0 +1,13 @@
+.all-trainer {
+    border: solid rgb(29, 165, 210) 2px;
+    margin: 22px;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.all-trainer img{
+    border-radius: 100px;
+}
+.all-trainer button{
+    margin-bottom: 5px;
+}
