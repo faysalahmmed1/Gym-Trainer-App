@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.inits';
+import SocialLogIn from '../SocialLogIn/SocialLogIn';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -11,7 +12,8 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    let from= location.state?.from?.pathname||"/";
+    let from = location.state?.from?.pathname || "/";
+    let errorElement;
 
     const [
         signInWithEmailAndPassword,
@@ -20,7 +22,13 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     if (user) {
-        navigate(from,{replace:true});
+        navigate(from, { replace: true });
+    }
+
+    if (error) {
+        errorElement = <p>Error: {error?.message}</p>
+
+
     }
 
     const handleSubmit = (event) => {
@@ -48,8 +56,10 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
+                {errorElement}
                 <p>New account? <Link className='text-decoration-none ' to={'/register'}>please Register</Link></p>
                 <p>Forget Password <Link className='text-decoration-none' onClick={navigateRegister} to='/register'>Forget Password</Link></p>
+                <SocialLogIn></SocialLogIn>
             </Form>
         </div>
 
