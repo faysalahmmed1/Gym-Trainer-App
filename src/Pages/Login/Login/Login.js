@@ -2,9 +2,11 @@ import React, { useRef } from 'react';
 import './Login.css';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.inits';
 import SocialLogIn from '../SocialLogIn/SocialLogIn';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -21,6 +23,8 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
     if (user) {
         navigate(from, { replace: true });
     }
@@ -40,6 +44,17 @@ const Login = () => {
     const navigateRegister = (event) => {
         const navigate = ('/register')
     }
+    const forgetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('sent email');
+        }
+        else {
+            toast('Please Enter your Email Address');
+        }
+
+    }
     return (
         <div className='LoginPage'>
             <h1 className='text-primary text-center mb-5'> Please Login</h1>
@@ -58,8 +73,9 @@ const Login = () => {
                 </Button>
                 {errorElement}
                 <p>New account? <Link className='text-decoration-none ' to={'/register'}>please Register</Link></p>
-                <p>Forget Password <Link className='text-decoration-none' onClick={navigateRegister} to='/register'>Forget Password</Link></p>
+                <p>Forget Password <button className='btn btn-link text-decoration-none' onClick={forgetPassword} >Forget Password</button></p>
                 <SocialLogIn></SocialLogIn>
+                <ToastContainer />
             </Form>
         </div>
 
